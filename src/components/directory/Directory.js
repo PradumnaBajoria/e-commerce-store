@@ -10,7 +10,7 @@ function Directory() {
             title: 'HATS',
             imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
             id: 1,
-            linkUrl: 'shop/hats'
+            linkUrl: 'hats'
             },
             {
             title: 'JACKETS',
@@ -43,12 +43,10 @@ function Directory() {
 
     return (
         <div className="directory-menu">
-            {sections.map(({id, imageUrl, title, size}) => (
+            {sections.map(({ id, ...otherSectionProps }) => (
                 <MenuItem 
-                    title = {title}
-                    imageUrl = {imageUrl} 
                     key = {id}
-                    size={size}
+                    {...otherSectionProps}
                 />
             ))}
         </div>
