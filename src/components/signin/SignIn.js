@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./SignIn.scss"
 import FormInput from "../form-input/FormInput"
 import CustomButton from "../custom-button/CustomButton"
-
+import { signInWithGoogle } from "../../firebase/Firebase"
 
 function SignIn() {
 
@@ -43,7 +43,7 @@ function SignIn() {
                     required 
                 />
                 <CustomButton type='submit'>Sign In</CustomButton>
-                
+                <CustomButton onClick={signInWithGoogle}>Sign In With Google</CustomButton>
             </form>
 
         </div>
