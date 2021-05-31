@@ -11,11 +11,21 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
 
-  
+
+  useEffect(() => {
+    var unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      setCurrentUser(user)
+      console.log(user)
+    })
+    return () => {
+      unsubscribeFromAuth()
+      console.log("hi")
+    }
+  }, [])
 
   return (
     <div>
-      <Header />
+      <Header currentUser={currentUser} />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/shop' component={Shop} />
@@ -26,16 +36,3 @@ function App() {
 }
 
 export default App;
-
-
-/* 
-{
-    apiKey: "AIzaSyDvGv63kVugNtrpKjNsSQoarPVc3nCfG3E",
-    authDomain: "e-commerce-f52a7.firebaseapp.com",
-    projectId: "e-commerce-f52a7",
-    storageBucket: "e-commerce-f52a7.appspot.com",
-    messagingSenderId: "920892882839",
-    appId: "1:920892882839:web:028afe46524b0a4cb38ed2",
-    measurementId: "G-VSBY2QKH3C"
-  }
-*/
