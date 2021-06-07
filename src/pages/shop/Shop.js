@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import ShopData from "./ShopData"
-import CollectionPreview from "../../components/collection-preview/CollectionPreview"
+import CollectionOverview from '../../components/collections-overview/CollectionOverview'
 
-function Shop() {
-
-    const [collections, setCollections] = useState(ShopData)
-
+function Shop({collections}) {
     return (
         <div className="shap-page">
-            {collections.map(({id, ...otherCollectionProps}) => (
-                <CollectionPreview key={id} {...otherCollectionProps} />
-            ))}
+            <CollectionOverview />
         </div>
     )
 }
