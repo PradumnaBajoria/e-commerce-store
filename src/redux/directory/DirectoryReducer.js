@@ -4,7 +4,7 @@ const INITIAL_STATE = {
         title: 'HATS',
         imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
         id: 1,
-        linkUrl: 'hats'
+        linkUrl: 'shop/hats'
         },
         {
         title: 'JACKETS',
